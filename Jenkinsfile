@@ -1,7 +1,7 @@
 pipeline {
   agent {
     kubernetes {
-      yamlFile 'jenkins-pod.yaml'
+      yamlFile 'jenkins/jenkins-pod.yaml'
     }
 
   }
