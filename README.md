@@ -23,6 +23,7 @@ I'm using [`dep`](https://github.com/golang/dep):
 dep ensure
 ```
 ### Running locally
+
 ```
 go run main.go
 ```
