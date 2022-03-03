@@ -5,11 +5,13 @@ pipeline {
     }
 
   }
+
   stages {
     stage('Build') {
       steps {
         container(name: 'kaniko') {
           sh "ls"
+          sh "/kaniko/executor --context `pwd` --destination registry.jenkins.svc:5000/service-a:latest"
         }
 
       }
