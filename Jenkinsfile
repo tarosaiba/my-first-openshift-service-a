@@ -29,6 +29,7 @@ pipeline {
           sh "kubectl get pods -n $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
           sh "kubectl -n $PROJECT-${env.BRANCH_NAME.toLowerCase()} rollout status deployment service-a"
           sh "kubectl get pods -n $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
+          sh "sleep 10"
           sh "curl http://service-a.$PROJECT-${env.BRANCH_NAME.toLowerCase()}.svc:8080/v1/tasks"
           sh "kubectl delete namespace $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
         }
