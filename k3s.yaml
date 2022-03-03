@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: service-a
-        image: localhost:5000/service-a
+        image: registry.rancher.localhost/service-a
         ports:
         - containerPort: 8080
         env:

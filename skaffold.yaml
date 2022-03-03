@@ -4,7 +4,7 @@ metadata:
   name: my-first-openshift-service-a
 build:
   artifacts:
-  - image: localhost:5000/service-a
+  - image: registry.rancher.localhost/service-a
     docker:
       dockerfile: Dockerfile
 deploy:
