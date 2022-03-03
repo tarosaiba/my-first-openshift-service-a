@@ -25,9 +25,10 @@ pipeline {
           kubectl create namespace $PROJECT-${env.BRANCH_NAME.toLowerCase()}
           set -e
           """
-          sh "kubectl run nginx --image=nginx -n $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
-          sh "kubectl get pods -n $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
           sh "kubectl apply -f k3s.yaml -n $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
+          sh "kubectl get pods -n $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
+          sh "sleep 200"
+          sh "kubectl delete namespace $PROJECT-${env.BRANCH_NAME.toLowerCase()}"
         }
 
       }
